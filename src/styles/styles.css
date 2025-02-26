@@ -1,3 +1,31 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+.link {
+  position: relative;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3d348b;
+  transition: width 0.3s ease-in-out;
+}
+
+.link:hover::before {
+  width: 100%;
+}
+
+.outline-effect:focus {
+  outline: none;
+}
+
+.outline-effect:focus-visible {
+  outline: 2px solid #3d348b;
+  outline-offset: 2px;
+  transition: outline 0.3s ease-in-out;
+}
